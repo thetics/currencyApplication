@@ -47,7 +47,7 @@ public class JSONController {
         } catch (IllegalArgumentException e) {
             logger.warn("Duplicate request detected: {}", request, e);
             return ResponseEntity.badRequest().body(e.getMessage());
-        } catch (Exception e) { // SHOULD be catched specifically not like this general "Exception" 
+        } catch (Exception e) { // SHOULD be catched specifically not like this general "Exception"
             logger.error("Unexpected error processing currency history request: {}", request, e);
             return ResponseEntity.badRequest().body("Unexpected error occurred");
         }
